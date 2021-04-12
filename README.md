@@ -5,7 +5,7 @@ This project aims to create a web application that aims to offer a way to study 
 
 
 ## Settings
-The development of the project was defined using the ```MVC architecture```, separating its application in 3 layers.
+The development of the project was defined using the ```MVC``` architecture, separating its application in 3 layers.
 
 The controller will send the update status commands to the model using ```Java``` as programing language.
 
