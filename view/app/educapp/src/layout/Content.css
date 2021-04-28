@@ -1,0 +1,66 @@
+.main-content {
+    overflow-y: scroll;
+    width: 80%;
+}
+
+.card {
+    display: flex;
+    justify-content: flex-end;
+    color: #fff;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    position: relative;
+}
+
+    .card-title {
+        flex-grow: 1;
+    }
+
+    .card-title > p {
+        max-width: 50%;
+    }
+
+    .card-title > a {
+        color: #fff;
+        padding-bottom: 1rem;
+    }
+
+    .card > img {
+        position: absolute;
+        margin-top: -5rem;
+        width: 25rem;
+    }
+
+    .student-info {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .student-info > .graph {
+        background-color: blueviolet;
+        padding: 20px;
+        width: 50%;
+    }
+    
+    .student-info > .subjects {
+        background-color: #e5e6e4;
+        border-radius: 1rem;
+        padding: 1rem 2rem;
+        width: 25rem;
+    }
+
+    .student-info .course-item {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content:space-around;
+        margin-bottom: 1.75rem;
+    }
+
+    .course-item i {
+        margin-right: 1rem;
+        font-size: 2rem;
+        color: #b92b47;
+    }
