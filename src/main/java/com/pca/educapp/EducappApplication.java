@@ -2,8 +2,9 @@ package com.pca.educapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 public class EducappApplication {
 
 	public static void main(String[] args) {
@@ -11,5 +12,4 @@ public class EducappApplication {
 
 		System.out.println("hello world");
 	}
-
 }

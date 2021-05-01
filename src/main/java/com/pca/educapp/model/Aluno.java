@@ -3,34 +3,37 @@ package com.pca.educapp.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import java.text.NumberFormat;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.Set;
+import java.util.Locale;
+import java.util.function.ToIntFunction;
 
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
 @Entity
 @Table(name = "Aluno")
 public class Aluno {
-
     @Id
     @GeneratedValue
-    private Long id;
+    private int id = 0;
     @NonNull
     private String nome;
     @NonNull
     private String sobreNome;
+    private Long matricula;
     @NonNull
-    private Integer matricula;
     private Date dataNascimento;
+    @NonNull
+    private String email;
 
 
-    public Aluno(String nome, String sobreNome, Date dataNascimento) {
+    public Aluno(String nome, String sobreNome, Date dataNascimento, String email) {
         this.nome = nome;
         this.sobreNome = sobreNome;
         this.dataNascimento = dataNascimento;
+        this.email = email;
     }
 }
