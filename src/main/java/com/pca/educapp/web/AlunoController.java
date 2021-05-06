@@ -27,9 +27,7 @@ class AlunoController {
     }
 
     @GetMapping("/alunos")
-    Collection<Aluno> alunos() {
-        return alunoRepository.findAll();
-    }
+    Collection<Aluno> alunos() { return alunoRepository.findAll(); }
 
     @GetMapping("/aluno/{id}")
     ResponseEntity<?> getAluno(@PathVariable Long id) {
