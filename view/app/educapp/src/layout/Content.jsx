@@ -1,6 +1,6 @@
 import {Switch, Route} from 'react-router-dom';
-import Course from '../views/Course';
-import Hours from '../views/Hours';
+import Course from '../views/Home';
+import Hours from '../views/Course';
 import Account from '../views/Account';
 import Lessons from '../views/Lessons';
 import LogOut from '../views/LogOut';
@@ -9,12 +9,11 @@ import Settings from '../views/Settings';
 export default function  Content(props) {
 
     return (
-        <main className="main-content">
             <Switch>
-                <Route path='/course'>
+                <Route path='/home'>
                     <Course />
                 </ Route>
-                <Route path='/hours'>
+                <Route path='/course'>
                     <Hours />
                 </ Route>
                 <Route path='/account'>
@@ -30,6 +29,5 @@ export default function  Content(props) {
                     <Settings />
                 </ Route>
             </ Switch>
-        </main>
     );
 }

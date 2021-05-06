@@ -1,7 +1,7 @@
-import './index.css'
-import './layout/Nav.css';
-import './layout/SearchBar.css';
-import './layout/Content.css';
+import './assets/css/index.css'
+import './assets/css/Nav.css';
+import './assets/css/Content.css';
+import './assets/css/Account.css';
 
 
 import React from 'react';

@@ -6,16 +6,33 @@ import { faComment, faHome, faPen, faUserAlt, faCogs, faSignOutAlt } from '@fort
 export default function Nav(props) {
     return (
         <React.Fragment>
-            <div className="menu">
-                <div className="menu-tabs">
-                    <Tab tab='/course' fa={faHome} text="Course" />
-                    <Tab tab='/hours' fa={faComment} text="Hours" />
-                    <Tab tab='/lessons' fa={faPen} text="Lessons" />
-                    <Tab tab='/account' fa={faUserAlt} text="Account" />
-                    <Tab tab='/settings' fa={faCogs} text="Settings" />
-                </div>
-                    <Tab tab='/logout' fa={faSignOutAlt} text="Log Out" />
-            </div>
+        <aside className="navbar">
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                    <Tab path={'/home'} icon={faHome} title="Home"/>
+                </li>
+
+                <li className="nav-item">
+                    <Tab path={'/course'} icon={faComment} title="Course"/>
+                </li>
+
+                <li className="nav-item">
+                    <Tab path={'/lessons'} icon={faPen} title="Lessons"/>
+                </li>
+
+                <li className="nav-item">
+                    <Tab path={'/account'} icon={faUserAlt} title="Account"/>
+                </li>
+
+                <li className="nav-item">
+                    <Tab path={'/settings'} icon={faCogs} title="Settings"/>
+                </li>
+
+                <li className="nav-item">
+                    <Tab path={'/logout'} icon={faSignOutAlt} title="Logout"/>
+                </li>
+            </ul>
+        </aside>
         </React.Fragment>
     );
 }

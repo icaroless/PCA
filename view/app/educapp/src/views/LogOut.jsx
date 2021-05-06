@@ -5,7 +5,9 @@ export default function Course(props) {
     const tabDescription = `Learn and improve skills across business, tech, design and more.`
 
     return (
-        <Title title="Log Out" color="#7D3C98" text={tabDescription} 
-            path={Img} description="Student" />
+        <main className="main-content">
+            <Title title="Log Out" color="#AA0F30" text={tabDescription} 
+                path={Img} description="Student" />
+        </main>
     );
 }

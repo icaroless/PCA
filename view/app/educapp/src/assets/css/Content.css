@@ -1,6 +1,28 @@
 .main-content {
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: calc(100vw - 5rem);
+    justify-content: center;
     overflow-y: scroll;
-    width: 80%;
+    gap: 5rem;
+    padding: 2rem;
+    
+}
+
+.main-content::-webkit-scrollbar {
+    width: 0.4rem;
+    background-color: #00000048;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background-color: #b92b47;
+    border-radius: 1rem;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .card {
@@ -10,6 +32,10 @@
     border-radius: 1.5rem;
     padding: 2rem;
     position: relative;
+    max-width: 100%;
+    width: calc(40rem + 10vw);
+   
+
 }
 
     .card-title {
@@ -27,8 +53,8 @@
 
     .card > img {
         position: absolute;
-        margin-top: -5rem;
-        width: 25rem;
+        margin-top: -2rem;
+        width: calc(20% + 10vw);
     }
 
     .student-info {
