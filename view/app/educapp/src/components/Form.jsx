@@ -1,18 +1,21 @@
-import Img from '../assets/img/avatar.png';
+import Img from '../assets/img/avatar.jpg';
 
 import React, {useState} from 'react'
 
 export default function Form(props) {
-    const [name, setName] = useState('Fernanda')
-    const [username, setUsername] = useState('nanda')
+    const [name, setName] = useState('Gandalf')
+    const [username, setUsername] = useState('wizard')
     const [email, setEmail] = useState('teste@email.com')
     const [birth, setBirth] = useState('1990-10-31')
     const [password, setPassword] = useState('admin')
+    const idNumber = 'MAT1234'
 
     return (
         <div className="user-account">
-            <form className="user-form">
-                <input type="image" src={Img} alt="" className="image-picker" />
+            <form className="user-form" method="POST">
+                <div className="form-image">
+                    <input type="image" src={Img} alt="" className="image-picker" />
+                </div>
 
                 <div className="form-group">
                     <label htmlFor="form-name">Full Name</label>
@@ -24,6 +27,12 @@ export default function Form(props) {
                     <label htmlFor="form-name">Username</label>
                     <input type="text" value={username} id="form-username" 
                         className="user-input" onChange={(ev) => setUsername(ev.target.value)}/>
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="form-id">ID Number</label>
+                    <input type="text" value={idNumber} id="form-id" 
+                        className="user-input" disabled/>
                 </div>
 
                 <div className="form-group">
@@ -44,7 +53,16 @@ export default function Form(props) {
                         className="user-input" onChange={(ev) => setPassword(ev.target.value)}/>
                 </div>
 
-                <button type="submit" className="form-btn">Update</button>
+                <div className="form-group">
+                    <label htmlFor="form-confirm">Confirm</label>
+                    <input type="password" id="form-confirm" 
+                        className="user-input" required placeholder="Password" />
+                </div>
+
+                <div className="form-group">
+                    <button type="submit" className="form-btn">Update</button>
+                    <button type="submit" className="form-btn">Delete</button>
+                </div>
             </form>
         </div>
     );

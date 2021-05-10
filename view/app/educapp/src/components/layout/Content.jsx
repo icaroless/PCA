@@ -1,16 +1,20 @@
 import {Switch, Route} from 'react-router-dom';
-import Course from '../views/Home';
-import Hours from '../views/Course';
-import Account from '../views/Account';
-import Lessons from '../views/Lessons';
-import LogOut from '../views/LogOut';
-import Settings from '../views/Settings';
+
+import '../../assets/css/Content.css';
+
+import Course from '../../views/Home';
+import Hours from '../../views/Course';
+import Account from '../../views/Account';
+import Lessons from '../../views/Lessons';
+import LogOut from '../../views/LogOut';
+import Settings from '../../views/Settings';
+import Classroom from '../../views/Classroom';
 
 export default function  Content(props) {
 
     return (
             <Switch>
-                <Route path='/home'>
+                <Route exact path='/'>
                     <Course />
                 </ Route>
                 <Route path='/course'>
@@ -27,6 +31,9 @@ export default function  Content(props) {
                 </ Route>
                 <Route path='/settings'>
                     <Settings />
+                </ Route>
+                <Route path='/classroom'>
+                    <Classroom />
                 </ Route>
             </ Switch>
     );

@@ -4,14 +4,10 @@ export default function Title(props) {
     }
 
     return (
-        <div className="wrapper">
-            <div className="card" style={cardStyle} >
-                <div className="card-title">
-                    <h1>{props.title}</h1>
-                    <p>{props.text}</p>
-                </div>
-                <img src={props.path} alt={props.description} />
-            </div>
+        <div className="card" style={cardStyle} >
+            <img src={props.path} alt={props.alt} width="64px"/>
+            <h1>{props.title}</h1>
         </div>
+       
     );
 }

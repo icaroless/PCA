@@ -1,5 +1,6 @@
 import React from 'react';
-import Tab from '../components/Tab';
+import Tab from '../Tab';
+import  '../../assets/css/Nav.css';
 
 import { faComment, faHome, faPen, faUserAlt, faCogs, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,7 +10,7 @@ export default function Nav(props) {
         <aside className="navbar">
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <Tab path={'/home'} icon={faHome} title="Home"/>
+                    <Tab path={'/'} icon={faHome} title="Home"/>
                 </li>
 
                 <li className="nav-item">

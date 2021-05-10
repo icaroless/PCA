@@ -1,13 +1,16 @@
+import '../assets/css/Course.css';
+
 import Title from '../components/Title';
-import Img from '../assets/img/img1.png';
+// import {Link} from 'react-router-dom'
+
 
 export default function Course(props) {
-    const tabDescription = `Learn and improve skills across business, tech, design and more.`
 
     return (
         <main className="main-content">
-            <Title title="Course" text={tabDescription} 
-                path={Img} description="Student" />
+            <Title title="Course" color='#6C4360' 
+                path="https://img.icons8.com/dusk/64/000000/classroom.png" alt="Course"/>
+  
         </main>
     );
 }
