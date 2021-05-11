@@ -1,21 +1,20 @@
 import Img from '../assets/img/avatar.jpg';
 
-import React, {useState} from 'react'
+import React, {useContext} from 'react'
+import {UserContext} from '../data/UserData'
 
 export default function Form(props) {
-    const [name, setName] = useState('Gandalf')
-    const [username, setUsername] = useState('wizard')
-    const [email, setEmail] = useState('teste@email.com')
-    const [birth, setBirth] = useState('1990-10-31')
-    const [password, setPassword] = useState('admin')
-    const idNumber = 'MAT1234'
+    const {name, username, idNumber, email, birthday, password} = useContext(UserContext)
+    const {setName, setUsername, setEmail, setBirthday, setPassword} = useContext(UserContext)
+
 
     return (
         <div className="user-account">
-            <form className="user-form" method="POST">
+            <form className="user-form">
                 <div className="form-image">
-                    <input type="image" src={Img} alt="" className="image-picker" />
+                    <input type="image" src={Img} alt="Profile" className="image-picker" />
                 </div>
+                <div className="pointer"></div>
 
                 <div className="form-group">
                     <label htmlFor="form-name">Full Name</label>
@@ -43,8 +42,8 @@ export default function Form(props) {
 
                 <div className="form-group">
                     <label htmlFor="form-birth">Birthday</label>
-                    <input type="date" value={birth} id="form-birth" 
-                        className="user-input" onChange={(ev) => setBirth(ev.target.value)}/>
+                    <input type="date" value={birthday} id="form-birth" 
+                        className="user-input" onChange={(ev) => setBirthday(ev.target.value)}/>
                 </div>
 
                 <div className="form-group">
@@ -60,8 +59,9 @@ export default function Form(props) {
                 </div>
 
                 <div className="form-group">
-                    <button type="submit" className="form-btn">Update</button>
-                    <button type="submit" className="form-btn">Delete</button>
+                    <button className="form-btn">Update</button>
+
+                    <button className="form-btn">Delete</button>
                 </div>
             </form>
         </div>
