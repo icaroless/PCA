@@ -31,4 +31,14 @@
     background-image: linear-gradient(to right, var(--bg-primary), var(--bg-secondary));
     border: none;
     height: 0.4rem;
+    animation: 1s progress 0s linear;
+}
+
+@keyframes progress {
+    from {
+        width: 60%;
+    }
+    to {
+        width: 100%;
+    }
 }
