@@ -17,8 +17,8 @@
     padding: 1rem;
     background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary));
     border-radius: 50%;
-    width: 20rem;
-    height: 20rem;
+    width: 18rem;
+    height: 18rem;
     transform: translateY(-7rem);
     transition: 0.5s;
 }
@@ -28,7 +28,7 @@
 	border: 7rem solid transparent;
 	border-bottom: 0;
 	border-top-color: var(--bg-primary);
-    margin-top: -12.9rem;
+    margin-top: -13.35rem;
 
 }
 

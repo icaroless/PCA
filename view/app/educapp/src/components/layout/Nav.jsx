@@ -11,7 +11,7 @@ export default function Nav(props) {
                 <li className="nav-item">
                     <Tab path={'/'} icon={faHome} title="Home"/>
                 </li>
-
+                
                 <li className="nav-item">
                     <Tab path={'/course'} icon={faComment} title="Course"/>
                 </li>

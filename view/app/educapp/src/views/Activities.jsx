@@ -6,7 +6,7 @@ export default function Classroom(props) {
     const { id } = useParams()
 
     return (
-         <Main section={id} sectionColor="#B23551" 
+         <Main section={id} sectionColor="#CD5C5C" 
                path="https://img.icons8.com/dusk/64/000000/bookmark.png">
          </Main>
     );

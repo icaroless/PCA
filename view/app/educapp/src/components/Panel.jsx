@@ -24,7 +24,7 @@ export default function Panel (props) {
             <hr className="divider" />
 
             <div className="list-item">
-                <span className="title-opt">Languange: </span>
+                <span className="title-opt">Language: </span>
                 <span>{languange}</span>
             </div>
         </div>

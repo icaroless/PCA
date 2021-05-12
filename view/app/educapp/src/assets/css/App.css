@@ -89,6 +89,7 @@
 
 /*Title Card Style*/    
 .card {
+    text-transform: capitalize;
     display: flex;
     align-items: center;
     justify-content: flex-start;

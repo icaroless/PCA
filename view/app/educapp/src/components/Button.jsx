@@ -5,8 +5,9 @@ export default function Button(props) {
         backgroundColor: props.color,
         borderColor: props.border
     }
+    
     return (
-        <Link to="/classroom">
+        <Link to={props.url}>
             <div className="course-btn" style={styles}>
                 <img src={props.img} alt={props.classroom} />
                 <h3>{props.classroom}</h3>
