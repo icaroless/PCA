@@ -13,11 +13,11 @@ export default function Nav(props) {
                 </li>
                 
                 <li className="nav-item">
-                    <Tab path={'/course'} icon={faComment} title="Course"/>
+                    <Tab path={'/course/'} icon={faComment} title="Course"/>
                 </li>
 
                 <li className="nav-item">
-                    <Tab path={'/lessons'} icon={faPen} title="Lessons"/>
+                    <Tab path={'/lessons/'} icon={faPen} title="Lessons"/>
                 </li>
 
                 <li className="nav-item">

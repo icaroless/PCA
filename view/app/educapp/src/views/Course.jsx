@@ -4,7 +4,7 @@ import Main from '../components/layout/Main';
 import Button from '../components/Button';
 
 export default function Course(props) {
-    const classroom = `/classroom/`
+    const classroom = `/course/`
 
     return (
         <Main section="Course" sectionColor="#6C4360"

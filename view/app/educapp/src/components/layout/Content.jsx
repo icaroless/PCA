@@ -16,11 +16,11 @@ export default function  Content(props) {
             <Switch>
                 <Route exact path='/' component = {Home} />
 
-                <Route path='/course' component = {Course} />
+                <Route exact path='/course/' component = {Course} />
 
                 <Route path='/account' component = {Account} />
 
-                <Route path='/lessons' component = {Lessons} />
+                <Route exact path='/lessons/' component = {Lessons} />
                   
                 <Route path='/logout' component = {LogOut} />
 
@@ -28,9 +28,9 @@ export default function  Content(props) {
                     
                 <Route path='/settings' component = {Settings} />
                 
-                <Route path='/classroom/:id' component = {Classroom} />
+                <Route path='/course/:id' component = {Classroom} />
 
-                <Route path='/activities/:id' component = {Activities} />
+                <Route path='/lessons/:id' component = {Activities} />
 
                 <Route path='*' component = {NotFound} />   
             </ Switch>

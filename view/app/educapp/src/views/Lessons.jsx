@@ -5,7 +5,7 @@ import Button from '../components/Button';
 
 
 export default function Lessons(props) {
-    const classroom = `/activities/`
+    const classroom = `/lessons/`
 
     return (
         <Main section="Lessons" sectionColor="#893F58" 
