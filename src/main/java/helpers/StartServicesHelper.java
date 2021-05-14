@@ -6,7 +6,6 @@ import com.pca.educapp.model.AlunoRepository;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Scanner;
 
 //class especializada na ajuda de configuração de serviços, inicialização de sistemas e feedback de processos internos.
 public class StartServicesHelper {
