@@ -1,6 +1,6 @@
 export const history = [
     {
-		status: false,
+		status: true,
         title: "History 1",
         content: <>
 			<p>

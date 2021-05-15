@@ -1,6 +1,7 @@
+// FIXME  
 import '../assets/css/Classroom.css';
 
-// import {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import Main from '../components/layout/Main';
 import Button from '../components/Controls';
 
@@ -12,11 +13,12 @@ import {useParams} from 'react-router-dom'
 export default function Classroom(props) {
     const { id } = useParams()
     const [article, next, back, index] = useIndex(content[id])
-    // const status = article.status
+    const [status, setStatus] = useState(article.status)
 
-    // useEffect(() => {
-    //     status = article.status.current
-    // }, [article])
+    useEffect(() => {
+        setStatus(article.status)
+
+    }, [article, setStatus])
 
 
     return (
@@ -26,6 +28,8 @@ export default function Classroom(props) {
             <div className="wrapper">
                 <Button callback={back} path="https://img.icons8.com/flat-round/64/fa314a/left--v1.png"
                     alt="Back"/>
+
+                <p>{index + 1} / {content[id].length}</p>
 
                 <Button callback={next} path="https://img.icons8.com/flat-round/64/fa314a/right--v1.png"
                     alt="Next"/>
@@ -39,17 +43,14 @@ export default function Classroom(props) {
             </div>
 
             <div className="wrapper">
-                <p>{index + 1} / {content[id].length}</p>
+                <label className="checkbox" style={{color: status? '#008000' : '#808080'}}>
+                    <input type="checkbox" value="Status" checked={status} id="checked"
+                        onChange={(e) => setStatus(!status)}/>
+                        {status? 'Completed' : 'Mark as Completed'}
+                </label>
             </div>
 
-            {/* <label>
-                <input type="radio" value="Status" checked={status} 
-                    onChange={(e) => setStatus(!status)}/>
-                    {status? 'Completed' : 'Mark as Completed'}
-            </label> */}
 
-
-            
          </Main>
     );
 }
