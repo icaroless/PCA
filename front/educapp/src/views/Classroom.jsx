@@ -1,5 +1,5 @@
 // FIXME  
-import '../assets/css/Classroom.css';
+import '../assets/css/Course.css';
 
 import {useState, useEffect} from 'react'
 import Main from '../components/layout/Main';
@@ -44,9 +44,12 @@ export default function Classroom(props) {
 
             <div className="wrapper">
                 <label className="checkbox" style={{color: status? '#008000' : '#808080'}}>
+                
                     <input type="checkbox" value="Status" checked={status} id="checked"
                         onChange={(e) => setStatus(!status)}/>
+
                         {status? 'Completed' : 'Mark as Completed'}
+
                 </label>
             </div>
 

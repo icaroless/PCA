@@ -1,5 +1,6 @@
 import {useState} from 'react'
 
+/*Get the next/previous element in an array*/
 export function useIndex(array, start = 0) {
     const [index, setIndex] = useState(start)
     let step
@@ -15,4 +16,16 @@ export function useIndex(array, start = 0) {
     }
 
     return [array[index], next, back, index]
+}
+
+/*Change style/content of a component according to the state*/
+export function useStyle(stylesheet, init) {
+    const [state, setState] = useState(init)
+    let style = stylesheet[state]
+
+    function setStyle(newState) {
+        setState(newState)
+    }
+
+    return [style, setStyle]
 }
