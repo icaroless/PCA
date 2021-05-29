@@ -27,10 +27,13 @@ class AlunoController {
     }
 
     @GetMapping("/alunos")
-    Collection<Aluno> alunos() { return alunoRepository.findAll(); }
+    Collection<Aluno> alunos() {
+        return alunoRepository.findAll();
+    }
 
-    @GetMapping("/aluno/{id}")
+   @GetMapping("/aluno/{id}")
     ResponseEntity<?> getAluno(@PathVariable Long id) {
+        System.out.println(("id: " + id));
         Optional<Aluno> aluno = alunoRepository.findById(id);
         return aluno.map(response -> ResponseEntity.ok().body(response))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));

@@ -5,11 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
-import java.text.NumberFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
-import java.util.function.ToIntFunction;
 
 @Data
 @NoArgsConstructor
@@ -18,7 +14,7 @@ import java.util.function.ToIntFunction;
 public class Aluno {
     @Id
     @GeneratedValue
-    private int id = 0;
+    private Long Id;
     @NonNull
     private String nome;
     @NonNull
@@ -28,12 +24,27 @@ public class Aluno {
     private Date dataNascimento;
     @NonNull
     private String email;
+    @NonNull
+    private String password;
 
 
-    public Aluno(String nome, String sobreNome, Date dataNascimento, String email) {
+    public Aluno(String nome, String sobreNome, Date dataNascimento, String email, String password) {
         this.nome = nome;
         this.sobreNome = sobreNome;
         this.dataNascimento = dataNascimento;
         this.email = email;
+        this.password = password;
+    }
+
+    public long getId() {
+        return this.Id;
+    }
+
+    public Date getDataNascimento() {
+        return this.dataNascimento;
+    }
+
+    public boolean authPassword(String password) {
+        return this.password == password;
     }
 }

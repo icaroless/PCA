@@ -21,12 +21,12 @@ public class StartServicesHelper {
         if (AlunoRepository.findAll().size() == 0) {
             ArrayList<Aluno> alunos = new ArrayList<Aluno>();
 
-            alunos.add(new Aluno("Gandalf", "Gray", new Date(1146-03-31), "gandalf@faculdade.com.br"));
-            alunos.add(new Aluno("Frodo", "Baggins", new Date(1532-01-04), "frodo@faculdade.com.br"));
-            alunos.add(new Aluno("Legolas", "Elf", new Date(1395-05-27), "legolas@faculdade.com.br"));
-            alunos.add(new Aluno("Gimli", "Dwarf", new Date(1402-9-15), "gimli@faculdade.com.br"));
-            alunos.add(new Aluno("Aragorn", "Strider", new Date(1406-10-15), "aragorn@faculdade.com.br"));
-            alunos.add(new Aluno("Sam", "Gamgee", new Date(1530-11-27), "samg@faculdade.com.br"));
+            alunos.add(new Aluno("Gandalf", "Gray", new Date(1146-03-31), "gandalf@faculdade.com.br", "$as_3s5%91"));
+            alunos.add(new Aluno("Frodo", "Baggins", new Date(1532-01-04), "frodo@faculdade.com.br", "&xSd1_445%13-!"));
+            alunos.add(new Aluno("Legolas", "Elf", new Date(1395-05-27), "legolas@faculdade.com.br", "03#_!Rert912&"));
+            alunos.add(new Aluno("Gimli", "Dwarf", new Date(1402-9-15), "gimli@faculdade.com.br", "1uS_x$%330!3(*"));
+            alunos.add(new Aluno("Aragorn", "Strider", new Date(1406-10-15), "aragorn@faculdade.com.br", "lj@!Ee68*P5"));
+            alunos.add(new Aluno("Sam", "Gamgee", new Date(1530-11-27), "samg@faculdade.com.br", "@as34Sdx&_!*74"));
 
             AlunoRepository.saveAll(alunos);
             AlunoRepository.findAll().forEach(System.out::println);

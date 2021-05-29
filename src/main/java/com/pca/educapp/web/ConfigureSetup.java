@@ -27,7 +27,7 @@ public class ConfigureSetup {
             // -- Linux --
             case LINUX:
                 // Run a command
-                processBuilder.command("bash", "-c", "cd ./app && npm start && start https:localhost:3000");
+                processBuilder.command("bash", "-c", "ls ./app && npm start && xdg-open https:localhost:3000");
                 break;
         }
 
