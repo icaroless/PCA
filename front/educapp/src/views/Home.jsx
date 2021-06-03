@@ -1,17 +1,19 @@
 // FIXME
 import '../assets/css/Home.css'
 
+
+import DataContext from '../data/DataContext'
+
+import React, {useContext} from 'react'
 import Main from '../components/layout/Main';
 import Chart from '../components/cards/Chart';
 
-import React, {useContext} from 'react'
-import {UserContext} from '../data/UserData'
-
 export default function Home(props) {
-    const {name} = useContext(UserContext)
-
+     const {
+        nome,
+    } = useContext(DataContext)
     return (
-        <Main section={`Welcome, ${name}!`} sectionColor="#46335E" 
+        <Main section={`Welcome, ${nome}!`} sectionColor="#46335E" 
                path="https://img.icons8.com/dusk/64/000000/work-from-home.png">
 
             <div className="wrapper">

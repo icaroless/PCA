@@ -1,44 +1,81 @@
 // FIXME
 import React, {useState} from 'react';
+import DataContext from './DataContext'
+import axios from 'axios'
 
-const userInfo = {
-    name: 'Gandalf',
-    username: 'wizard',
-    idNumber: 'MAT123',
-    email: 'teste@email.com',
-    birthday: '1711-10-31',
-    password: 'admin'
-
-}
-
-export const UserContext = React.createContext(userInfo)
+const baseUrl = "http://localhost:8080/api/aluno"
 
 const Storage = (props) => {
-    const [user, setUser] = useState(userInfo)
+    const [user, setState] = useState(DataContext)
 
-    function updateUser(key, value) {
-        setUser({
-            ...user,
-            [key]: value
+    function updateState(key, value) {
+        setState({
+            ...user, 
+            [key]: value}
+        )
+    }
+
+    function getUser(id) {
+        axios.get(`${baseUrl}/${id}`)
+            .then(resp => {
+                const student = resp.data;
+                setState({...student});
+            })
+    }
+
+    async function deleteUser(e) {
+        e.preventDefault()
+        await axios.delete(`${baseUrl}/${user.id}`)
+            .then(resp => {
+                setState({
+                    nome: "",
+                    sobreNome: "",
+                    matricula: "",
+                    dataNascimento: "",
+                    email: "",
+                    password: "",
+                    id:""
+                })
+
+                window.location.replace("http://localhost:3000/login")
         })
     }
 
+    async function putUser(e, datas) {
+        e.preventDefault()
+        const {id} = user
+
+        const newDatas = {...datas}
+
+        await axios.put(`${baseUrl}/${user.id}`, newDatas)
+            .then(resp => {
+                getUser(id)
+                alert("Dados atualizados com sucesso!")
+            }
+        )
+
+    }
+
     return (
-        <UserContext.Provider value = {{
-            name: user.name,
-            username: user.username,
-            idNumber: user.idNumber,
+        <DataContext.Provider value = {{
+            nome: user.nome,
+            sobreNome: user.sobreNome,
+            matricula: user.matricula,
             email: user.email,
-            birthday: user.birthday,
+            dataNascimento: user.dataNascimento,
             password: user.password,
-            setName: (n) => updateUser('name', n),
-            setUsername: (u) => updateUser('username', u),
-            setEmail: (e) => updateUser('email', e),
-            setBirthday: (b) => updateUser('birthday', b),
-            setPassword: (p) => updateUser('password', p)
+            id: user.id,
+            setName: e => updateState('nome', e),
+            setSurname: e => updateState('sobreNome', e),
+            setBirthday: e => updateState('dataNascimento', e),
+            setEmail: e => updateState('email', e),
+            setPassword: e => updateState('password', e),
+            getUser: e => getUser(e),
+            deleteUser: e => deleteUser(e),
+            putUser: (i, d) => putUser(i, d)
         }}>
             {props.children}
-        </UserContext.Provider>
+        </DataContext.Provider>
     );
 }
 

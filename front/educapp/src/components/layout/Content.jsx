@@ -11,14 +11,14 @@ import Activities from '../../views/Activities';
 import NotFound from '../../views/NotFound';
 
 export default function  Content(props) {
-
     return (
             <Switch>
+
                 <Route exact path='/' component = {Home} />
 
                 <Route exact path='/course/' component = {Course} />
 
-                <Route path='/account' component = {Account} />
+                <Route path='/account/:id' component = {Account} />
 
                 <Route exact path='/lessons/' component = {Lessons} />
                   
